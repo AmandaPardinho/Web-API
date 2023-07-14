@@ -1,0 +1,17 @@
+O QUE É UMA API?
+
+-API => Application Programming Interface
+    -recebe as requisições
+    -devolve a resposta
+    -disponibiliza informações para outras aplicações
+    -para consumir esses recursos é necessário que se siga as regras estabelecidas
+    -abstrai detalhes de implementação
+    -controla o que pode ou deve ser acessado
+        -criação de endpoint => devolve uma determinada informação para o usuário
+    -simplificando => 
+        -funciona como uma ponte(interface) entre a requisição feita pelo cliente e a resposta padronizada que pode ser consumida pelos clientes
+        -o processo de ir em busca da resposta não importa => basta seguir as regras impostas pela interface
+-arquitetura REST => Representational State Transfer
+    -padrão que implementa um conjunto de regras arquiteturais
+    -seguindo esse padrão => sempre se sabe o que será recebido e o que é necessário enviar em ambas as pontas.
+-API RESTful => implementa o conceito da arquitetura REST
