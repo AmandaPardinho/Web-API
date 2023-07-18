@@ -1,9 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FilmesAPI.Models
 {
+    [Table("Filmes")]
     public class Filme
     {
+        [Key]
+        [Required]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "O título do filme é obrigatório")]
