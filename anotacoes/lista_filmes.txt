@@ -1,0 +1,60 @@
+    {
+        "titulo": "A Origem",
+        "genero": "Sci-fi",
+        "duracao": 148
+    },
+    {
+        "titulo": "Star Wars",
+        "genero": "Aventura",
+        "duracao": 120
+    },
+    {
+        "titulo": "Planeta dos Macacos",
+        "genero": "Ação",
+        "duracao": 120
+    }
+    {
+        "titulo": "Corra",
+        "genero": "Thriller",
+        "duracao": 104
+    }
+    {
+        "titulo": "O Estranho Mundo de Jack",
+        "genero": "Holiday",
+        "duracao": 75
+    }
+    {
+        "titulo": "Her",
+        "genero": "Thriller",
+        "duracao": 119
+    }
+    {
+        "titulo": "O Show de Truman",
+        "genero": "Drama",
+        "duracao": 102
+    }
+    {
+        "titulo": "Pequena Miss Sunshine",
+        "genero": "Drama",
+        "duracao": 102
+    }
+    {
+        "titulo": "Histórias Cruzadas",
+        "genero": "Drama",
+        "duracao": 146
+    }
+    {
+        "titulo": "Todo Mundo Quase Morto",
+        "genero": "Comedia",
+        "duracao": 97
+    }
+    {
+        "titulo": "A Viagem de Chiriro",
+        "genero": "Fantasia",
+        "duracao": 125
+    }
+    {
+        "titulo": "O Fabuloso Destino de Amelie Poulain",
+        "genero": "Romance",
+        "duracao": 121
+    }
