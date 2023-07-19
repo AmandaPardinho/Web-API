@@ -1,6 +1,9 @@
 # **Web-API**
 
->Criando uma web api - curso Alura
+>Cursos que usarão o mesmo projeto:
+>
+>- Criando uma web api - curso Alura
+>- .Net6: relacionando entidades - curso Alura
 >
 >Para este curso, usei o SQL Server e não o MySQL. Por isso, para realizar a >conexão correta com o banco de dados, segui os passos dos seguintes vídeos (disponíveis no YouTube):
 >
