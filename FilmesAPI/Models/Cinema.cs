@@ -12,6 +12,9 @@ namespace FilmesAPI.Models
         public string Nome { get; set; }
 
         public int EnderecoId { get; set; }
+
+        //recupera uma instância do endereço(logradouro e número)
         public virtual Endereco Endereco { get; set; }
+        public virtual ICollection<Sessao> Sessoes { get; set; }
     }
 }
