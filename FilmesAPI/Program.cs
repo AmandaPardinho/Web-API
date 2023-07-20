@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 //abaixo, dois modos de fazer a conexão com o banco de dados:
 //builder.Services.AddDbContext<FilmeContext>(opts => opts.UseSqlServer
 //("Data Source=DESKTOP-MIHQT5G;Initial Catalog=Filmes_API;User ID=sa;Password=amanda03"));
-builder.Services.AddDbContext<FilmeContext>(opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("FilmeConnection")));
+builder.Services.AddDbContext<FilmeContext>(opts => opts.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("FilmeConnection")));
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
