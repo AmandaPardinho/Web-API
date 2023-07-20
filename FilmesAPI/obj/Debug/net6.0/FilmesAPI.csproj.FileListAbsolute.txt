@@ -93,3 +93,5 @@ C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\FilmesAPI\bi
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\FilmesAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\FilmesAPI\bin\Debug\net6.0\FilmesAPI.xml
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\FilmesAPI\obj\Debug\net6.0\FilmesAPI.xml
+C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\FilmesAPI\bin\Debug\net6.0\Castle.Core.dll
+C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\FilmesAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
