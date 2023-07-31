@@ -1,4 +1,4 @@
-﻿namespace FilmesAPI.Data.Dtos
+﻿namespace DesafioApiFilme.Data.Dtos
 {
     public class ReadSessaoDto
     {
