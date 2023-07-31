@@ -32,11 +32,17 @@ namespace FilmesAPI.Controllers
         [HttpGet]
         public IEnumerable<ReadCinemaDto> RecuperaCinemas([FromQuery] int? enderecoId = null)
         {
+            List<ReadCinemaDto> lista;
+
             if(enderecoId == null)
             {
-                return _mapper.Map<List<ReadCinemaDto>>(_context.Cinemas.ToList());
+                lista = _mapper.Map<List<ReadCinemaDto>>(_context.Cinemas.ToList());
             }
-            return _mapper.Map<List<ReadCinemaDto>>(_context.Cinemas.FromSqlRaw($"SELECT Id, Nome, EnderecoId FROM Cinemas WHERE Cinemas.EnderecoId = {enderecoId}").ToList());
+            else
+            {
+                lista = _mapper.Map<List<ReadCinemaDto>>(_context.Cinemas.FromSqlRaw($"SELECT Id, Nome, EnderecoId FROM Cinemas WHERE Cinemas.EnderecoId = {enderecoId}").ToList());
+            }
+            return lista;
         }
 
         [HttpGet("{id}")]
