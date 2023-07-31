@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using FilmesAPI.Data.Dtos;
-using FilmesAPI.Models;
+using DesafioApiFilme.Data.Dtos;
+using DesafioApiFilme.Models;
 
-namespace FilmesAPI.Profiles
+namespace DesafioApiFilme.Profiles
 {
     public class CinemaProfile: Profile
     {
