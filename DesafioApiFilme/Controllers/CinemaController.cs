@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using FilmesAPI.Data;
-using FilmesAPI.Data.Dtos;
-using FilmesAPI.Models;
+using DesafioApiFilme.Data;
+using DesafioApiFilme.Data.Dtos;
+using DesafioApiFilme.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace FilmesAPI.Controllers
+namespace DesafioApiFilme.Controllers
 {
     [ApiController]
     [Route("[controller]")]
