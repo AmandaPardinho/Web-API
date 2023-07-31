@@ -1,7 +1,7 @@
-﻿using FilmesAPI.Models;
+﻿using DesafioApiFilme.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace FilmesAPI.Data
+namespace DesafioApiFilme.Data
 {
     public class FilmeContext: DbContext
     {
