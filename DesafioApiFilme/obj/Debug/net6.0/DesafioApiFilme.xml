@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DesafioApiFilme</name>
+    </assembly>
+    <members>
+        <member name="T:DesafioApiFilme.Migrations.InitialCreationTables">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.InitialCreationTables.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.InitialCreationTables.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.InitialCreationTables.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
