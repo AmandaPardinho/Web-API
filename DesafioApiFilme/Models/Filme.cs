@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FilmesAPI.Models
+namespace DesafioApiFilme.Models
 {
     public class Filme
     {
