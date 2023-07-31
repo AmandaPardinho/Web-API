@@ -14,6 +14,12 @@ namespace DesafioApiFilme.Models
         [Required]
         public int Numero { get; set; }
 
+        public int CidadeId { get; set; }
+
+        public int CinemaId { get; set; }
+
         public virtual Cinema Cinema { get; set; }
+
+        public virtual Cidade Cidade { get; set; }
     }
 }
