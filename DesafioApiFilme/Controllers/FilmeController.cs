@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using DesafioApiFilme.Data;
-using DesafioApiFilme.Data.Dtos;
+using DesafioApiFilme.Data.Dtos.DtoFilme;
 using DesafioApiFilme.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -27,7 +27,7 @@ namespace DesafioApiFilme.Controllers
             Filme filme = _mapper.Map<Filme>(filmeDto);
             _context.Filmes.Add(filme);
             _context.SaveChanges();
-            return CreatedAtAction(nameof(RecuperaFilmePorId), new { id = filme.Id }, filme);
+            return CreatedAtAction(nameof(RecuperaFilmePorId), new { id = filme.FilmeId }, filme);
         }
 
         [HttpGet]
@@ -45,7 +45,7 @@ namespace DesafioApiFilme.Controllers
         [HttpGet("{id}")]
         public IActionResult RecuperaFilmePorId(int id)
         {
-            var filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+            var filme = _context.Filmes.FirstOrDefault(filme => filme.FilmeId == id);
             if (filme == null) return NotFound();
             var filmeDto = _mapper.Map<ReadFilmeDto>(filme);
             return Ok(filmeDto);
@@ -54,7 +54,7 @@ namespace DesafioApiFilme.Controllers
         [HttpPut("{id}")]
         public IActionResult AtualizaFilme(int id, [FromBody] UpdateFilmeDto filmeDto) 
         {
-            var filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+            var filme = _context.Filmes.FirstOrDefault(filme => filme.FilmeId == id);
             if(filme == null) return NotFound();
             _mapper.Map(filmeDto, filme);
             _context.SaveChanges();
@@ -65,7 +65,7 @@ namespace DesafioApiFilme.Controllers
         [HttpPatch("{id}")]
         public IActionResult AtualizaFilmeParcial(int id, JsonPatchDocument<UpdateFilmeDto> patch)
         {
-            var filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+            var filme = _context.Filmes.FirstOrDefault(filme => filme.FilmeId == id);
             if (filme == null) return NotFound();
 
             var filmeParaAtualizar = _mapper.Map<UpdateFilmeDto>(filme);
@@ -82,7 +82,7 @@ namespace DesafioApiFilme.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeletaFilme(int id)
         {
-            var filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+            var filme = _context.Filmes.FirstOrDefault(filme => filme.FilmeId == id);
             if(filme == null) return NotFound();
             _context.Remove(filme);
             _context.SaveChanges();
