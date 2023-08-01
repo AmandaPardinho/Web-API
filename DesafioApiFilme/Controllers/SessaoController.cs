@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using DesafioApiFilme.Data;
-using DesafioApiFilme.Data.Dtos;
+using DesafioApiFilme.Data.Dtos.DtoSessao;
 using DesafioApiFilme.Models;
 using Microsoft.AspNetCore.Mvc;
 
