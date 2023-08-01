@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using DesafioApiFilme.Data;
-using DesafioApiFilme.Data.Dtos;
+using DesafioApiFilme.Data.Dtos.DtoEndereco;
 using DesafioApiFilme.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,7 +25,7 @@ namespace DesafioApiFilme.Controllers
             Endereco endereco = _mapper.Map<Endereco>(enderecoDto);
             _context.Enderecos.Add(endereco);
             _context.SaveChanges();
-            return CreatedAtAction(nameof(RecuperaEnderecosPorId), new { id = endereco.Id }, endereco);
+            return CreatedAtAction(nameof(RecuperaEnderecosPorId), new { id = endereco.EnderecoId }, endereco);
         }
 
         [HttpGet]
@@ -37,7 +37,7 @@ namespace DesafioApiFilme.Controllers
         [HttpGet("{id}")]
         public IActionResult RecuperaEnderecosPorId(int id)
         {
-            Endereco endereco = _context.Enderecos.FirstOrDefault(endereco => endereco.Id == id);
+            Endereco endereco = _context.Enderecos.FirstOrDefault(endereco => endereco.EnderecoId == id);
             if(endereco != null)
             {
                 ReadEnderecoDto enderecoDto = _mapper.Map<ReadEnderecoDto>(endereco);
@@ -49,7 +49,7 @@ namespace DesafioApiFilme.Controllers
         [HttpPut("{id}")]
         public IActionResult AtualizaEndereco(int id, [FromBody] UpdateEnderecoDto enderecoDto)
         {
-            Endereco endereco = _context.Enderecos.FirstOrDefault(endereco => endereco.Id == id);
+            Endereco endereco = _context.Enderecos.FirstOrDefault(endereco => endereco.EnderecoId == id);
             if(endereco == null) return NotFound();
             _mapper.Map(enderecoDto, endereco);
             _context.SaveChanges();
@@ -59,7 +59,7 @@ namespace DesafioApiFilme.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeletaEndereco(int id)
         {
-            Endereco endereco =_context.Enderecos.FirstOrDefault(endereco => endereco.Id == id);
+            Endereco endereco =_context.Enderecos.FirstOrDefault(endereco => endereco.EnderecoId == id);
             if(endereco == null) return NotFound();
             _context.Remove(endereco);
             _context.SaveChanges();
