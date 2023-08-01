@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using DesafioApiFilme.Data;
-using DesafioApiFilme.Data.Dtos;
+using DesafioApiFilme.Data.Dtos.DtoCinema;
 using DesafioApiFilme.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -26,7 +26,7 @@ namespace DesafioApiFilme.Controllers
             Cinema cinema = _mapper.Map<Cinema>(cinemaDto);
             _context.Cinemas.Add(cinema);
             _context.SaveChanges();
-            return CreatedAtAction(nameof(RecuperaCinemasPorId), new {Id = cinema.Id}, cinemaDto);
+            return CreatedAtAction(nameof(RecuperaCinemasPorId), new {Id = cinema.CinemaId}, cinemaDto);
         }
 
         [HttpGet]
@@ -48,7 +48,7 @@ namespace DesafioApiFilme.Controllers
         [HttpGet("{id}")]
         public IActionResult RecuperaCinemasPorId(int id)
         {
-            Cinema cinema = _context.Cinemas.FirstOrDefault(cinema => cinema.Id == id);
+            Cinema cinema = _context.Cinemas.FirstOrDefault(cinema => cinema.CinemaId == id);
             if (cinema != null) 
             {
                 ReadCinemaDto cinemaDto = _mapper.Map<ReadCinemaDto>(cinema);
@@ -60,7 +60,7 @@ namespace DesafioApiFilme.Controllers
         [HttpPut("{id}")]
         public IActionResult AtualizaCinema(int id, [FromBody] UpdateCinemaDto cinemaDto)
         {
-            Cinema cinema = _context.Cinemas.FirstOrDefault(cinema => cinema.Id == id);
+            Cinema cinema = _context.Cinemas.FirstOrDefault(cinema => cinema.CinemaId == id);
             if(cinema == null)
             {
                 return NotFound();
@@ -73,7 +73,7 @@ namespace DesafioApiFilme.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeletaCinema(int id)
         {
-            Cinema cinema = _context.Cinemas.FirstOrDefault(cinema => cinema.Id == id);
+            Cinema cinema = _context.Cinemas.FirstOrDefault(cinema => cinema.CinemaId == id);
             if(cinema == null) return NotFound();
             _context.Remove(cinema);
             _context.SaveChanges();
