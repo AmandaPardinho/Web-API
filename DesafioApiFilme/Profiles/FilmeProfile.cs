@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using DesafioApiFilme.Data.Dtos;
+using DesafioApiFilme.Data.Dtos.DtoFilme;
 using DesafioApiFilme.Models;
 
 namespace DesafioApiFilme.Profiles
