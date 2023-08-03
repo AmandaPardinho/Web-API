@@ -25,13 +25,38 @@ namespace DesafioApiFilme.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("DesafioApiFilme.Models.Cidade", b =>
+                {
+                    b.Property<int>("EnderecoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UfId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("CidadeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NomeCidade")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EnderecoId", "UfId");
+
+                    b.HasIndex("EnderecoId")
+                        .IsUnique();
+
+                    b.HasIndex("UfId");
+
+                    b.ToTable("Cidades");
+                });
+
             modelBuilder.Entity("DesafioApiFilme.Models.Cinema", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CinemaId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CinemaId"));
 
                     b.Property<int>("EnderecoId")
                         .HasColumnType("int");
@@ -40,7 +65,7 @@ namespace DesafioApiFilme.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("CinemaId");
 
                     b.HasIndex("EnderecoId")
                         .IsUnique();
@@ -50,11 +75,17 @@ namespace DesafioApiFilme.Migrations
 
             modelBuilder.Entity("DesafioApiFilme.Models.Endereco", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("EnderecoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EnderecoId"));
+
+                    b.Property<int>("CidadeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CinemaId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Logradouro")
                         .IsRequired()
@@ -63,18 +94,18 @@ namespace DesafioApiFilme.Migrations
                     b.Property<int>("Numero")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("EnderecoId");
 
                     b.ToTable("Enderecos");
                 });
 
             modelBuilder.Entity("DesafioApiFilme.Models.Filme", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("FilmeId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FilmeId"));
 
                     b.Property<int>("Duracao")
                         .HasColumnType("int");
@@ -88,7 +119,7 @@ namespace DesafioApiFilme.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("FilmeId");
 
                     b.ToTable("Filmes");
                 });
@@ -101,11 +132,51 @@ namespace DesafioApiFilme.Migrations
                     b.Property<int?>("CinemaId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Horario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Sala")
+                        .HasColumnType("int");
+
                     b.HasKey("FilmeId", "CinemaId");
 
                     b.HasIndex("CinemaId");
 
                     b.ToTable("Sessoes");
+                });
+
+            modelBuilder.Entity("DesafioApiFilme.Models.UF", b =>
+                {
+                    b.Property<string>("UfId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("NomeUf")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UfId");
+
+                    b.ToTable("Ufs");
+                });
+
+            modelBuilder.Entity("DesafioApiFilme.Models.Cidade", b =>
+                {
+                    b.HasOne("DesafioApiFilme.Models.Endereco", "Endereco")
+                        .WithOne("Cidade")
+                        .HasForeignKey("DesafioApiFilme.Models.Cidade", "EnderecoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DesafioApiFilme.Models.UF", "Uf")
+                        .WithMany("Cidade")
+                        .HasForeignKey("UfId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Endereco");
+
+                    b.Navigation("Uf");
                 });
 
             modelBuilder.Entity("DesafioApiFilme.Models.Cinema", b =>
@@ -145,6 +216,9 @@ namespace DesafioApiFilme.Migrations
 
             modelBuilder.Entity("DesafioApiFilme.Models.Endereco", b =>
                 {
+                    b.Navigation("Cidade")
+                        .IsRequired();
+
                     b.Navigation("Cinema")
                         .IsRequired();
                 });
@@ -152,6 +226,11 @@ namespace DesafioApiFilme.Migrations
             modelBuilder.Entity("DesafioApiFilme.Models.Filme", b =>
                 {
                     b.Navigation("Sessoes");
+                });
+
+            modelBuilder.Entity("DesafioApiFilme.Models.UF", b =>
+                {
+                    b.Navigation("Cidade");
                 });
 #pragma warning restore 612, 618
         }
