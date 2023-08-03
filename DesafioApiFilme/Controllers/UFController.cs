@@ -54,5 +54,25 @@ namespace DesafioApiFilme.Controllers
             return Ok(ufDto);
         }
 
+        [HttpPut("{id}")]
+        public IActionResult AtualizaUf(string id, [FromBody] UpdateUfDto ufDto)
+        {
+            var uf = _context.Ufs.FirstOrDefault(uf => uf.UfId.Equals(id));
+            if(uf == null) return NotFound();
+            _mapper.Map(ufDto, uf);
+            _context.SaveChanges();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeletaUf(string id)
+        {
+            var uf = _context.Ufs.FirstOrDefault(uf => uf.UfId.Equals(id));
+            if( uf == null) return NotFound();
+            _context.Ufs.Remove(uf);
+            _context.SaveChanges();
+            return NoContent();
+        }
+
     }
 }
