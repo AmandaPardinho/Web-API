@@ -29,7 +29,21 @@ namespace DesafioApiFilme.Controllers
             return CreatedAtAction(nameof(RecuperaUfPorId), new { id = uf.UfId }, uf);
         }
 
-        
+        [HttpGet]
+        public IEnumerable<ReadUfDto> RecuperaUf(/*[FromQuery] int skip = 0, [FromQuery] int take = 1, [FromQuery]*/ string? nomeCidade = null)
+        {
+            if(nomeCidade == null)
+            {
+                return _mapper.Map<List<ReadUfDto>>(_context.Ufs.ToList());
+                //return _mapper.Map<List<ReadUfDto>>(_context.Ufs.Skip(skip).Take(take).ToList());
+            }
+            return _mapper.Map<List<ReadUfDto>>(_context.Ufs
+                .Where(uf => uf.Cidade
+                .Any(cidade => cidade.NomeCidade == nomeCidade)));
+            //return _mapper.Map<List<ReadUfDto>>(_context.Ufs.Skip(skip).Take(take)
+                //.Where(uf => uf.Cidade
+                //.Any(cidade => cidade.NomeCidade == nomeCidade)));
+        }
 
         [HttpGet("{id}")]
         public IActionResult RecuperaUfPorId(string id)
