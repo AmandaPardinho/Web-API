@@ -31,15 +31,19 @@ namespace DesafioApiFilme.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<ReadFilmeDto> RecuperaFilmes([FromQuery]int skip = 0, [FromQuery]int take = 5, [FromQuery] string? nomeCinema = null)
+        public IEnumerable<ReadFilmeDto> RecuperaFilmes(/*[FromQuery]int skip = 0, [FromQuery]int take = 5,*/ [FromQuery] string? nomeCinema = null)
         {
             if(nomeCinema == null)
             {
-                return _mapper.Map<List<ReadFilmeDto>>(_context.Filmes.Skip(skip).Take(take).ToList());
+                return _mapper.Map<List<ReadFilmeDto>>(_context.Filmes.ToList());
+                //return _mapper.Map<List<ReadFilmeDto>>(_context.Filmes.Skip(skip).Take(take).ToList());
             }
-            return _mapper.Map<List<ReadFilmeDto>>(_context.Filmes.Skip(skip).Take(take)
+            return _mapper.Map<List<ReadFilmeDto>>(_context.Filmes
                 .Where(filme => filme.Sessoes
                 .Any(sessao => sessao.Cinema.Nome == nomeCinema)).ToList());
+            //return _mapper.Map<List<ReadFilmeDto>>(_context.Filmes.Skip(skip).Take(take)
+            //    .Where(filme => filme.Sessoes
+            //    .Any(sessao => sessao.Cinema.Nome == nomeCinema)).ToList());
         }
 
         [HttpGet("{id}")]
