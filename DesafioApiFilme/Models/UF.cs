@@ -13,17 +13,14 @@ namespace DesafioApiFilme.Models
 
         public virtual ICollection<Cidade> Cidade { get; set; }
 
-
-        //usar tabela ASCII
         //public UF()
         //{
-        //    List<string> estado = new List<string>();
+        //    var id = UfId;
+        //    var idMaiusculo = id.ToUpper();
 
-        //    estado.Add("Sao Paulo");
-
-        //    List<char> siglaEstado = new List<char>();
+        //    var nome = NomeUf;
+        //    var nomeMaiusculo = nome.ToUpper();
 
         //}
-
     }
 }
