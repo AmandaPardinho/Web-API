@@ -9,7 +9,5 @@ namespace DesafioApiFilme.Data.Dtos.DtoUF
 
         [Required]
         public string NomeUf { get; set; }
-
-        public int CidadeId { get; set; }
     }
 }
