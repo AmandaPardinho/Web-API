@@ -4,16 +4,16 @@
         <name>DesafioApiFilme</name>
     </assembly>
     <members>
-        <member name="T:DesafioApiFilme.Migrations.InitialCreationTables">
+        <member name="T:DesafioApiFilme.Migrations.NewInitialTable">
             <inheritdoc />
         </member>
-        <member name="M:DesafioApiFilme.Migrations.InitialCreationTables.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:DesafioApiFilme.Migrations.NewInitialTable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:DesafioApiFilme.Migrations.InitialCreationTables.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:DesafioApiFilme.Migrations.NewInitialTable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:DesafioApiFilme.Migrations.InitialCreationTables.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:DesafioApiFilme.Migrations.NewInitialTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

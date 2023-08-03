@@ -22,9 +22,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\Dtos\DtoCidade\" />
-    <Folder Include="Data\Dtos\DtoUF\" />
-  </ItemGroup>
-
 </Project>
