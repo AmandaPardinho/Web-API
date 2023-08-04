@@ -1,13 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
-using DesafioApiFilme.Models;
+﻿using DesafioApiFilme.Models;
 
 namespace DesafioApiFilme.Data.Dtos.DtoUF
 {
     public class ReadUfDto
     {
-        public string UfId { get; set; }
-        public string NomeUf { get; set; }
-        public int CidadeId { get; set; }
+        public string Id { get; set; }
+        public string Nome { get; set; }
         public virtual ICollection<Cidade> Cidade { get; set; }
     }
 }
