@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "fQjlGKa7LcB8kuNhrSEng6I/b8F7ihP6Zs3JLTTgr0U=",
+  "Hash": "WkuY2NSUK1i1iCMM9H44PcqINyQ4syCjx/fMj7saBxw=",
   "Source": "FilmesAPI",
   "BasePath": "_content/FilmesAPI",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\AmandaMarquesPardinh\\Desktop\\Performa\\repositorios\\Web-API\\DesafioApiFilme\\DesafioApiFilme.csproj",
+      "Version": 2,
+      "Source": "DesafioApiFilme",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [],
   "Assets": []
 }
