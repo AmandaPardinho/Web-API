@@ -1,13 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace DesafioApiFilme.Data.Dtos.DtoCidade
+﻿namespace DesafioApiFilme.Data.Dtos.DtoCidade
 {
     public class UpdateCidadeDto
     {
-        [Required]
-        public int CidadeId { get; set; }
-
-        [Required]
-        public string NomeCidade { get; set; }
+        public int Id { get; set; }        
+        public string Nome { get; set; }
     }
 }
