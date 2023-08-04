@@ -25,23 +25,21 @@ namespace DesafioApiFilme.Data
             builder.Entity<Sessao>()
                 .HasOne(sessao => sessao.Filme)
                 .WithMany(filme => filme.Sessoes)
-                .HasForeignKey(sessao => sessao.FilmeId);
+                .HasForeignKey(sessao => sessao.FilmeId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             //endereço
             builder.Entity<Endereco>()
                 .HasOne(endereco => endereco.Cinema)                
                 .WithOne(cinema => cinema.Endereco)                
-                .HasPrincipalKey<Endereco>(endereco => endereco.EnderecoId)
+                .HasPrincipalKey<Endereco>(endereco => endereco.Id)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            //cidade
-            builder.Entity<Cidade>()
-                .HasKey(cidade => new { cidade.EnderecoId, cidade.UfId });
-
-            builder.Entity<Cidade>()
-                .HasOne(cidade => cidade.Uf)
-                .WithMany(uf => uf.Cidade)
-                .HasForeignKey(cidade => cidade.UfId)
+            //uf
+            builder.Entity<UF>()
+                .HasMany(uf => uf.Cidade)
+                .WithOne(cidade => cidade.Uf)
+                .HasPrincipalKey(uf => uf.Id)
                 .OnDelete(DeleteBehavior.Restrict);
         }
 
@@ -53,84 +51,3 @@ namespace DesafioApiFilme.Data
         public DbSet<UF> Ufs { get; set; }
     }
 }
-
-
-//////filme
-////builder.Entity<Filme>()
-////    .HasKey(filme => new {filme.FilmeId, filme.SessaoId});
-
-////builder.Entity<Filme>()
-////    .HasMany(filme => filme.Sessoes)
-////    .WithOne(sessao =>  sessao.Filme)
-////    .HasForeignKey(filme => filme.SessaoId)
-////    .OnDelete(DeleteBehavior.Restrict);
-
-////sessão
-//builder.Entity<Sessao>()
-//    .HasKey(sessao => new { sessao.FilmeId, sessao.CinemaId });
-
-//builder.Entity<Sessao>()
-//    .HasOne(sessao => sessao.Cinema)
-//    .WithMany(cinema => cinema.Sessoes)
-//    .HasForeignKey(sessao => sessao.CinemaId);
-
-//builder.Entity<Sessao>()
-//    .HasOne(sessao => sessao.Filme)
-//    .WithMany(filme => filme.Sessoes)
-//    .HasForeignKey(sessao => sessao.FilmeId);
-
-////cinema
-////builder.Entity<Cinema>()
-////    .HasKey(cinema => new { cinema.CinemaId, cinema.SessaoId, cinema.EnderecoId });
-
-////builder.Entity<Cinema>()
-////    .HasMany(cinema => cinema.Sessoes)
-////    .WithOne(sessao => sessao.Cinema)
-////    .HasForeignKey(cinema => cinema.SessaoId)
-////    .OnDelete(DeleteBehavior.Restrict);
-
-////builder.Entity<Cinema>()
-////    .HasOne(cinema => cinema.Endereco)
-////    .WithOne(endereco => endereco.Cinema)
-////    .OnDelete(DeleteBehavior.Restrict);
-
-////endereço
-////builder.Entity<Endereco>()
-////    .HasKey(endereco => new {endereco.EnderecoId, endereco.CinemaId, endereco.CidadeId});
-
-//builder.Entity<Endereco>()
-//    .HasOne(endereco => endereco.Cinema)
-//    .WithOne(cinema => cinema.Endereco)
-//    .OnDelete(DeleteBehavior.Restrict);
-
-////builder.Entity<Endereco>()
-////    .HasOne(endereco => endereco.Cidade)
-////    .WithMany(cidade => cidade.Endereco)
-////    .HasForeignKey(endereco => endereco.CidadeId)
-////    .OnDelete(DeleteBehavior.Restrict);
-
-//////cidade
-////builder.Entity<Cidade>()
-////    .HasKey(cidade => new {cidade.CidadeId, cidade.EnderecoId, cidade.UfId});
-
-////builder.Entity<Cidade>()
-////    .HasMany(cidade => cidade.Endereco)
-////    .WithOne(endereco => endereco.Cidade)
-////    .HasForeignKey(cidade => cidade.EnderecoId)
-////    .OnDelete(DeleteBehavior.Restrict);
-
-////builder.Entity<Cidade>()
-////    .HasOne(cidade => cidade.Uf)
-////    .WithMany(uf => uf.Cidade)
-////    .HasForeignKey(cidade => cidade.UfId)
-////    .OnDelete(DeleteBehavior.Restrict);
-
-//////uf
-////builder.Entity<UF>()
-////    .HasKey(uf => new { uf.UfId, uf.CidadeId });
-
-////builder.Entity<UF>()
-////    .HasMany(uf => uf.Cidade)
-////    .WithOne(cidade => cidade.Uf)
-////    .HasForeignKey(uf => uf.CidadeId)
-////    .OnDelete(DeleteBehavior.Restrict);
