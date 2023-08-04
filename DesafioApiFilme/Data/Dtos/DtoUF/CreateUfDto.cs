@@ -5,10 +5,9 @@ namespace DesafioApiFilme.Data.Dtos.DtoUF
     public class CreateUfDto
     {
         [Required]
-        public string UfId { get; set; }
+        public string Id { get; set; }
 
         [Required]
-        public string NomeUf { get; set; }
+        public string Nome { get; set; }
     }
-
 }
