@@ -6,7 +6,7 @@ namespace DesafioApiFilme.Models
     {
         [Key]
         [Required]
-        public int CinemaId { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo de nome é obrigatório")]
         public string Nome { get; set; }
