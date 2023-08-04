@@ -9,5 +9,7 @@ namespace DesafioApiFilme.Data.Dtos.DtoEndereco
 
         [Required]
         public int Numero { get; set; }
+
+        public int CidadeId { get; set; }
     }
 }
