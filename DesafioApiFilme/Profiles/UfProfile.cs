@@ -9,8 +9,7 @@ namespace DesafioApiFilme.Profiles
         public UfProfile()
         {
             CreateMap<CreateUfDto, UF>();
-            CreateMap<UF, ReadUfDto>()
-                .ForMember(ufDto => ufDto.Cidade, option => option.MapFrom(uf => uf.Cidade));
+            CreateMap<UF, ReadUfDto>(); 
             CreateMap<UpdateUfDto, UF>();
         }
     }
