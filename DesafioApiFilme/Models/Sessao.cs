@@ -1,12 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace DesafioApiFilme.Models
+﻿namespace DesafioApiFilme.Models
 {
     public class Sessao
-    {
-        public string Horario { get; set; }
-        public int Sala { get; set; }
-
+    { 
         public int? FilmeId { get; set; }
         public virtual Filme Filme { get; set; }
 
