@@ -4,9 +4,9 @@ namespace DesafioApiFilme.Data.Dtos.DtoCidade
 {
     public class ReadCidadeDto
     {
-        public int CidadeId { get; set; }
-        public string NomeCidade { get; set; }
-        public string UfId { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string SiglaUfId { get; set; }
         public ICollection<ReadEnderecoDto> Enderecos { get; set; }
     }
 }
