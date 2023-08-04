@@ -10,8 +10,8 @@ namespace DesafioApiFilme.Profiles
         {
             CreateMap<CreateCidadeDto, Cidade>();
             CreateMap<Cidade, ReadCidadeDto>()
-                .ForMember(cidadeDto => cidadeDto.UfId, option => option.MapFrom(cidade => cidade.Uf))
-                .ForMember(cidadeDto => cidadeDto.Enderecos, option => option.MapFrom(cidade => cidade.Endereco));
+                .ForMember(cidadeDto => cidadeDto.Enderecos, option => option.MapFrom(cidade => cidade.Endereco))
+                .ForMember(cidadeDto => cidadeDto.SiglaUfId, option => option.MapFrom(cidade => cidade.UfId));
             CreateMap<UpdateCidadeDto, Cidade>();
         }
     }
