@@ -26,7 +26,7 @@ namespace DesafioApiFilme.Controllers
             UF uf = _mapper.Map<UF>(ufDto);
             _context.Ufs.Add(uf);
             _context.SaveChanges();
-            return CreatedAtAction(nameof(RecuperaUfPorId), new { id = uf.UfId }, uf);
+            return CreatedAtAction(nameof(RecuperaUfPorId), new { id = uf.Id }, uf);
         }
 
         [HttpGet]
@@ -39,7 +39,7 @@ namespace DesafioApiFilme.Controllers
             }
             return _mapper.Map<List<ReadUfDto>>(_context.Ufs
                 .Where(uf => uf.Cidade
-                .Any(cidade => cidade.NomeCidade == nomeCidade)));
+                .Any(cidade => cidade.Nome == nomeCidade)));
             //return _mapper.Map<List<ReadUfDto>>(_context.Ufs.Skip(skip).Take(take)
                 //.Where(uf => uf.Cidade
                 //.Any(cidade => cidade.NomeCidade == nomeCidade)));
@@ -48,7 +48,7 @@ namespace DesafioApiFilme.Controllers
         [HttpGet("{id}")]
         public IActionResult RecuperaUfPorId(string id)
         {
-            var uf = _context.Ufs.FirstOrDefault(uf => uf.UfId == id);
+            var uf = _context.Ufs.FirstOrDefault(uf => uf.Id == id);
             if(uf == null) return NotFound();
             var ufDto = _mapper.Map<ReadUfDto>(uf);
             return Ok(ufDto);
@@ -57,7 +57,7 @@ namespace DesafioApiFilme.Controllers
         [HttpPut("{id}")]
         public IActionResult AtualizaUf(string id, [FromBody] UpdateUfDto ufDto)
         {
-            var uf = _context.Ufs.FirstOrDefault(uf => uf.UfId.Equals(id));
+            var uf = _context.Ufs.FirstOrDefault(uf => uf.Id.Equals(id));
             if(uf == null) return NotFound();
             _mapper.Map(ufDto, uf);
             _context.SaveChanges();
@@ -67,12 +67,11 @@ namespace DesafioApiFilme.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeletaUf(string id)
         {
-            var uf = _context.Ufs.FirstOrDefault(uf => uf.UfId.Equals(id));
+            var uf = _context.Ufs.FirstOrDefault(uf => uf.Id.Equals(id));
             if( uf == null) return NotFound();
             _context.Ufs.Remove(uf);
             _context.SaveChanges();
             return NoContent();
         }
-
     }
 }
