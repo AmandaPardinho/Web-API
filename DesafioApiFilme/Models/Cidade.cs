@@ -6,10 +6,10 @@ namespace DesafioApiFilme.Models
     {
         [Key]
         [Required]
-        public int CidadeId { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        public string NomeCidade { get; set; }       
+        public string Nome { get; set; }       
 
         public int EnderecoId { get; set; }
         public virtual ICollection<Endereco> Endereco { get; set; }
