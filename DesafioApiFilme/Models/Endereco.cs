@@ -6,7 +6,7 @@ namespace DesafioApiFilme.Models
     {
         [Key]
         [Required]
-        public int EnderecoId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Logradouro { get; set; }
