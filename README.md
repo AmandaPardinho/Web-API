@@ -13,6 +13,7 @@
 >
 >Sugiro assistir ambos os vídeos na ordem em que se encontram aqui no README. Ambos os vídeos usam o Visual Studio 2022 e, por isso, caso seja usada uma outra versão, pode haver alguma variação.
 >
+>O projeto terá continuação envolvendo mais entidades.
 
 [def]: https://www.youtube.com/watch?v=R0Eb_IocaIs
 [def2]: https://www.youtube.com/watch?v=zr3QiQDZ0-k
