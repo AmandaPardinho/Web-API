@@ -45,5 +45,25 @@ namespace DesafioApiFilme.Controllers
             }
             return NotFound();
         }
+
+        [HttpPut("{id}")]
+        public IActionResult AtualizaSessao(int id, [FromBody] UpdateSessaoDto sessaoDto)
+        {
+            var sessao = _context.Sessoes.FirstOrDefault(sessao => sessao.Id == id);
+            if(sessao == null) return NotFound();
+            _mapper.Map(sessaoDto, sessao);
+            _context.SaveChanges();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeletaSessao(int id)
+        {
+            var sessao = _context.Sessoes.FirstOrDefault(sessao =>sessao.Id == id);
+            if(sessao == null) return NotFound();
+            _context.Remove(sessao);
+            _context.SaveChanges();
+            return NoContent();
+        }
     }
 }
