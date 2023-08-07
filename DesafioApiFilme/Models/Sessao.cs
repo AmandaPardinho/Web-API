@@ -15,5 +15,6 @@ namespace DesafioApiFilme.Models
 
         public int? CinemaId { get; set; }
         public virtual Cinema Cinema { get; set; }
+
     }
 }
