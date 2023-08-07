@@ -44,10 +44,13 @@ namespace DesafioApiFilme.Data
         }
 
         public DbSet<Filme> Filmes { get; set; }
+        public DbSet<Genero> Generos { get; set; }
         public DbSet<Cinema> Cinemas { get; set; }
         public DbSet<Sessao> Sessoes { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Cidade> Cidades { get; set; }
         public DbSet<UF> Ufs { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Ingresso> Ingressos { get; set; }
     }
 }
