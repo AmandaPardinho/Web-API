@@ -11,7 +11,6 @@ namespace DesafioApiFilme.Models
         [Required]
         public string Nome { get; set; }
 
-        public int CidadeId { get; set; }
         public virtual ICollection<Cidade> Cidade { get; set; }
     }
 }
