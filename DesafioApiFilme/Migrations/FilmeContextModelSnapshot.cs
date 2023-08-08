@@ -48,7 +48,7 @@ namespace DesafioApiFilme.Migrations
 
                     b.HasIndex("UfId");
 
-                    b.ToTable("Cidades");
+                    b.ToTable("Cidades", (string)null);
                 });
 
             modelBuilder.Entity("DesafioApiFilme.Models.Cinema", b =>
@@ -71,7 +71,7 @@ namespace DesafioApiFilme.Migrations
                     b.HasIndex("EnderecoId")
                         .IsUnique();
 
-                    b.ToTable("Cinemas");
+                    b.ToTable("Cinemas", (string)null);
                 });
 
             modelBuilder.Entity("DesafioApiFilme.Models.Endereco", b =>
@@ -99,7 +99,7 @@ namespace DesafioApiFilme.Migrations
 
                     b.HasIndex("CidadeId");
 
-                    b.ToTable("Enderecos");
+                    b.ToTable("Enderecos", (string)null);
                 });
 
             modelBuilder.Entity("DesafioApiFilme.Models.Filme", b =>
@@ -124,7 +124,7 @@ namespace DesafioApiFilme.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Filmes");
+                    b.ToTable("Filmes", (string)null);
                 });
 
             modelBuilder.Entity("DesafioApiFilme.Models.Sessao", b =>
@@ -139,7 +139,7 @@ namespace DesafioApiFilme.Migrations
 
                     b.HasIndex("CinemaId");
 
-                    b.ToTable("Sessoes");
+                    b.ToTable("Sessoes", (string)null);
                 });
 
             modelBuilder.Entity("DesafioApiFilme.Models.UF", b =>
@@ -156,7 +156,7 @@ namespace DesafioApiFilme.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Ufs");
+                    b.ToTable("Ufs", (string)null);
                 });
 
             modelBuilder.Entity("DesafioApiFilme.Models.Cidade", b =>

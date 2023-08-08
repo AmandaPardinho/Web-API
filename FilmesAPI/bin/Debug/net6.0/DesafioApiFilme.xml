@@ -40,5 +40,17 @@
         <member name="M:DesafioApiFilme.Migrations.ThirdMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:DesafioApiFilme.Migrations.FourthMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.FourthMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.FourthMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.FourthMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>
