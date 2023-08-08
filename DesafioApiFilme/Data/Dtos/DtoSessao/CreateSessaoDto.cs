@@ -6,7 +6,7 @@ namespace DesafioApiFilme.Data.Dtos.DtoSessao
     public class CreateSessaoDto
     {
         [Required]
-        public SqlDateTime Horario { get; set; }
+        public DateTime Horario { get; set; }
 
         [Required]
         public int FilmeId { get; set; }
