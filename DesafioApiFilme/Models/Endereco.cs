@@ -19,5 +19,8 @@ namespace DesafioApiFilme.Models
 
         public int CidadeId { get; set; }
         public virtual Cidade Cidade { get; set; }
+
+        public int ClienteId { get; set; }
+        public virtual Cliente Cliente { get; set; }
     }
 }
