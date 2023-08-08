@@ -9,7 +9,10 @@ namespace DesafioApiFilme.Profiles
         public SessaoProfile()
         {
             CreateMap<CreateSessaoDto, Sessao>();
-            CreateMap<Sessao, ReadSessaoDto>();
+            CreateMap<Sessao, ReadSessaoDto>()
+                .ForMember(sessaoDto => sessaoDto.FilmeId, opt => opt.MapFrom(sessao => sessao.Filme))
+                .ForMember(sessaoDto => sessaoDto.CinemaId, opt => opt.MapFrom(sessao => sessao.Cinema));
+            CreateMap<UpdateSessaoDto, Sessao>();
         }
     }
 }
