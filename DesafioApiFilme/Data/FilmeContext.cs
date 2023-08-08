@@ -13,9 +13,39 @@ namespace DesafioApiFilme.Data
         //relacionamentos entre entidades
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            //genero
+            builder.Entity<Genero>()
+                .HasOne(genero => genero.Filmes)
+                .WithOne(filme => filme.Generos)
+                .HasPrincipalKey<Genero>(genero => genero.Id)
+                .OnDelete(DeleteBehavior.Restrict);
+            
+            //cliente
+            //builder.Entity<Cliente>()
+            //    .HasMany(cliente => cliente.Ingressos)
+            //    .WithOne(ingresso => ingresso.Cliente)
+            //    .HasPrincipalKey(cliente => cliente.Id)
+            //    .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Cliente>()
+                .HasMany(cliente => cliente.Enderecos)
+                .WithOne(endereco => endereco.Cliente)
+                .HasPrincipalKey(cliente => cliente.Id)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            //ingresso
+            builder.Entity<Ingresso>()
+                .HasKey(ingresso => new { ingresso.ClienteId, ingresso.SessaoId });
+
+            builder.Entity<Ingresso>()
+                .HasOne(ingresso => ingresso.Cliente)
+                .WithMany(cliente => cliente.Ingressos)
+                .HasForeignKey(ingresso => ingresso.ClienteId)
+                .OnDelete(DeleteBehavior.Restrict);     
+            
             //sessão
             builder.Entity<Sessao>()
-                .HasKey(sessao => new { sessao.FilmeId, sessao.CinemaId });
+                .HasKey(sessao => new { sessao.FilmeId, sessao.CinemaId, sessao.IngressoId });
 
             builder.Entity<Sessao>()
                 .HasOne(sessao => sessao.Cinema)
@@ -27,6 +57,13 @@ namespace DesafioApiFilme.Data
                 .WithMany(filme => filme.Sessoes)
                 .HasForeignKey(sessao => sessao.FilmeId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Sessao>()
+                .HasMany(sessao => sessao.Ingressos)
+                .WithOne(ingresso => ingresso.Sessao)
+                .HasPrincipalKey(sessao => sessao.Id)
+                .OnDelete(DeleteBehavior.Restrict);
+               
 
             //endereço
             builder.Entity<Endereco>()
