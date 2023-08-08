@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Data.SqlTypes;
 
 namespace DesafioApiFilme.Models
 {
@@ -8,7 +9,7 @@ namespace DesafioApiFilme.Models
         [Required]
         public int Id { get; set; }
 
-        public TimeOnly Horario { get; set; }
+        public SqlDateTime Horario { get; set; }
 
         public int? FilmeId { get; set; }
         public virtual Filme Filme { get; set; }
