@@ -21,6 +21,7 @@ namespace DesafioApiFilme.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public IActionResult AdicionaCinema([FromBody] CreateCinemaDto cinemaDto)
         {
             Cinema cinema = _mapper.Map<Cinema>(cinemaDto);
