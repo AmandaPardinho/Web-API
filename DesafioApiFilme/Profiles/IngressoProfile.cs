@@ -10,7 +10,6 @@ namespace DesafioApiFilme.Profiles
         {
             CreateMap<CreateIngressoDto, Ingresso>();
             CreateMap<Ingresso, ReadIngressoDto>()
-                .ForMember(ingressoDto => ingressoDto.ClienteId, opt => opt.MapFrom(ingresso => ingresso.Cliente))
                 .ForMember(ingressoDto => ingressoDto.SessaoId, opt => opt.MapFrom(ingresso => ingresso.Sessao));
             CreateMap<UpdateIngressoDto, Ingresso>();
         }
