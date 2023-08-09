@@ -8,9 +8,6 @@ namespace DesafioApiFilme.Data.Dtos.DtoGenero
     {
         public int Id { get; set; }
 
-        public string Nome { get; set; }
-
-        public ReadFilmeDto Filme { get; set; }
-        
+        public string Nome { get; set; }       
     }
 }
