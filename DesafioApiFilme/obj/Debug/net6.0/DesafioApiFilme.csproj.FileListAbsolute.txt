@@ -5,6 +5,7 @@ C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFi
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\bin\Debug\net6.0\DesafioApiFilme.runtimeconfig.json
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\bin\Debug\net6.0\DesafioApiFilme.dll
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\bin\Debug\net6.0\DesafioApiFilme.pdb
+C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\bin\Debug\net6.0\DesafioApiFilme.xml
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\bin\Debug\net6.0\Azure.Core.dll
@@ -90,8 +91,7 @@ C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFi
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\obj\Debug\net6.0\DesafioApiFilme.csproj.CopyComplete
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\obj\Debug\net6.0\DesafioApiFilme.dll
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\obj\Debug\net6.0\refint\DesafioApiFilme.dll
+C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\obj\Debug\net6.0\DesafioApiFilme.xml
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\obj\Debug\net6.0\DesafioApiFilme.pdb
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\obj\Debug\net6.0\DesafioApiFilme.genruntimeconfig.cache
 C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\obj\Debug\net6.0\ref\DesafioApiFilme.dll
-C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\bin\Debug\net6.0\DesafioApiFilme.xml
-C:\Users\AmandaMarquesPardinh\Desktop\Performa\repositorios\Web-API\DesafioApiFilme\obj\Debug\net6.0\DesafioApiFilme.xml
