@@ -6,6 +6,5 @@ namespace DesafioApiFilme.Data.Dtos.DtoUF
     {
         public string Id { get; set; }
         public string Nome { get; set; }
-        public virtual ICollection<Cidade> Cidade { get; set; }
     }
 }
