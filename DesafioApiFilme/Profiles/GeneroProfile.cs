@@ -9,10 +9,8 @@ namespace DesafioApiFilme.Profiles
         public GeneroProfile()
         {
             CreateMap<CreateGeneroDto, Genero>();
-            CreateMap<Genero, ReadGeneroDto>()
-                .ForMember(generoDto => generoDto.Filme, opt => opt.MapFrom(genero => genero.Filmes));
+            CreateMap<Genero, ReadGeneroDto>();
             CreateMap<UpdateGeneroDto, Genero>();
-
         }
     }
 }
