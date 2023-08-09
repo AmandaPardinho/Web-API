@@ -5,7 +5,7 @@ namespace DesafioApiFilme.Models
     public class Sessao
     {
         [Key]
-        [Required]
+        [Required]        
         public int Id { get; set; }
 
         public DateTime Horario { get; set; }
@@ -16,7 +16,6 @@ namespace DesafioApiFilme.Models
         public int? CinemaId { get; set; }
         public virtual Cinema Cinema { get; set; }
 
-        public int? IngressoId { get; set; }
         public virtual ICollection<Ingresso> Ingressos { get; set; }
 
     }
