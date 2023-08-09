@@ -1,0 +1,30 @@
+DIFERENÇAS ENTRE FUNCTIONS E PROCEDURES
+
+-procedure =>
+    -são objetos que são compilados previamente pelo SQL
+    -sempre que forem chamadas são executadas à partir do código pré-compilado
+    -nem sempre retorna um valor
+    -pode ter parâmetros de entrada e de saída
+    -não podem ser chamadas dentro de funções
+    -não é possível utilizar uma procedure em uma instrução SELECT
+    -não podem ser chamadas e/ou utilizadas nas instruções de SQL em qualquer lugar do WHERE/HAVING/SELECT
+    -retenção e reutilização do plano de execução(compilada previamente)
+    -pode ter exceções tratadas no bloco try-catch
+    -pode usar o Transaction Management
+    -são programas/scripts
+    -podem ser chamadas a partir de outras aplicações ou scripts
+    -permite alterar o estado global de uma base de dados(INSERT, DELETE, UPDATE)
+    -são usadas, normalmente, para juntar várias queries em uma única transação
+    -não retornam dados do tipo text, ntext, image, cursor ou timestamp
+-function =>
+    -é compilada e executada toda vez que é chamada
+    -sempre retorna um valor
+    -só tem parâmetros de entrada
+    -podem ser chamadas dentro de procedures
+    -pode ser incorporada a uma instrução SELECT
+    -podem ser chamadas e/ou utilizadas nas instruções de SQL em qualquer lugar do WHERE/HAVING/SELECT
+    -será compilada cada vez que for executada
+    -pode ter a tabela gerada associada a outras tabelas com a instrução JOIN
+    -não pode usar o bloco try-catch
+    -não pode usar o Transaction Management
+    -não permite alterações fora do seu escopo => não deve ser usada para alterar o estado global do banco de dados (INSERT, UPDATE, DELETE)
