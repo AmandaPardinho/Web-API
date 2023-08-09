@@ -1,0 +1,18 @@
+FUNCTIONS SQL
+
+-function => rotina que executa uma ação e retorna o resultado
+    -retorno => 
+        -valor único
+        -tabela
+    -podem ser definidas pelo usuário (user defined function) ou ser própria do SQL Server
+    -deve ser usada com cuidado: podem melhorar ou piorar o desempenho da consulta dependendo do caso
+    -devem ser criadas apenas funções que não existam no SQL Server
+-tipos retorno de função =>
+    -função determinística => retorna sempre o mesmo resultado ao receber um dado conjunto de valores
+    -função não-determinística => pode retornar resultados diferentes a cada execução com um conjunto específico de parâmetros
+-tipos de função =>
+    -função escalar: retorna um único valor e pode receber uma lista de parâmetros
+    -table-valued function => retorna uma tabela
+        -inline table-valued function: possui um único comando e o retorno é o resultado da execução desse comando
+        -multi-statement table-valued function: possui vários comandos e retorna uma tabela explicitamente definida
+-user defined function => segmento de código preparado que pode aceitar parâmetros, processar uma lógica e retornar dados em um banco de dados
