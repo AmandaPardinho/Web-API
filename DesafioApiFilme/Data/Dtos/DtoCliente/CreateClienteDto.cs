@@ -14,6 +14,6 @@ namespace DesafioApiFilme.Data.Dtos.DtoCliente
         [Required]
         public int Idade { get; set; }
 
-        public string Endereco { get; set; }
+        public int? EnderecoId { get; set; }
     }
 }
