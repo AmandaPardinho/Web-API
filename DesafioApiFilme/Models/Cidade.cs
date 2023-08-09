@@ -11,7 +11,6 @@ namespace DesafioApiFilme.Models
         [Required]
         public string Nome { get; set; }       
 
-        public int EnderecoId { get; set; }
         public virtual ICollection<Endereco> Endereco { get; set; }
 
         public string UfId { get; set; }
