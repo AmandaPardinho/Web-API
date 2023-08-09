@@ -1,0 +1,29 @@
+PROCEDURES SQL
+
+-procedure => bloco de código que executa uma determinada função no banco de dados
+    -conjunto de comandos organizados que podem ser executados de uma única vez 
+    -realiza uma tarefa determinada 
+    -aceita parâmetros de entrada para que a tarefa seja efetuada de acordo com a necessidade individual
+    -encapsula a lógica de negócio para permitir a reutilização
+    -diminui a quantidade de tráfego de rede
+-tipos de procedures =>
+    -procedure local: criada a partir de um banco de dados do próprio usuário
+    -procedure temporária: 
+        -local => começa com #
+        -global => começa com ##
+    -procedure de sistema:
+        -no SQL Server é identificada com a sigla sp;
+        -executa tarefas administrativas
+        -pode ser executada a partir de qualquer banco de dados
+    -procedure remota:
+        -pode usar queries distribuídas
+        -é usada apenas para compatibilidade
+    -procedure estendida:
+        -recebe a extensão .dll
+        -executada fora do SGBD SQL
+        -identificada com o prefixo xp
+-quando usar procedures =>
+    -quando há aplicações escritas em diferentes linguagens
+    -quando as aplicações rodam em diferentes plataformas, mas executam a mesma função
+    -quando a prioridade é a consistência e a segurança
+        -por que é mais seguro? => impede o acesso às tabelas do banco de dados de forma direta
