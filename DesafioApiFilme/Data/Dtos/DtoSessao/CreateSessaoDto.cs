@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Data.SqlTypes;
 
 namespace DesafioApiFilme.Data.Dtos.DtoSessao
 {
