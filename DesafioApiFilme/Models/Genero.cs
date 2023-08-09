@@ -11,7 +11,6 @@ namespace DesafioApiFilme.Models
         [Required]
         public string Nome { get; set; }
 
-        public int? FilmeId { get; set; }
         public virtual Filme Filmes { get; set; }
     }
 }
