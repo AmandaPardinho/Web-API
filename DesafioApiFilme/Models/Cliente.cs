@@ -18,9 +18,8 @@ namespace DesafioApiFilme.Models
         public int Idade { get; set; }
 
         public int EnderecoId { get; set; }
-        public virtual ICollection<Endereco> Enderecos { get; set; }
+        public virtual Endereco Endereco { get; set; }
 
-        public int IngressoId { get; set; }
         public virtual ICollection<Ingresso> Ingressos { get; set; }
     }
 }
