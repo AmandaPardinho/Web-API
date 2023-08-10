@@ -11,6 +11,6 @@ namespace DesafioApiFilme.Models
         [Required]
         public string Nome { get; set; }
 
-        public virtual Filme Filmes { get; set; }
+        public virtual ICollection<Filme> Filmes { get; set; }
     }
 }
