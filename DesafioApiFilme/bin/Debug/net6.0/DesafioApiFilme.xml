@@ -28,5 +28,41 @@
         <member name="M:DesafioApiFilme.Migrations.SecondMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:DesafioApiFilme.Migrations.ThirdMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.ThirdMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.ThirdMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.ThirdMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:DesafioApiFilme.Migrations.FourthMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.FourthMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.FourthMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.FourthMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:DesafioApiFilme.Migrations.FifthMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.FifthMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.FifthMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DesafioApiFilme.Migrations.FifthMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>

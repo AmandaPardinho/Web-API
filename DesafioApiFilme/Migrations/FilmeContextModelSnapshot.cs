@@ -140,8 +140,7 @@ namespace DesafioApiFilme.Migrations
                     b.Property<int>("Duracao")
                         .HasColumnType("int");
 
-                    b.Property<int?>("GeneroId")
-                        .IsRequired()
+                    b.Property<int>("GeneroId")
                         .HasColumnType("int");
 
                     b.Property<string>("Titulo")
@@ -150,8 +149,7 @@ namespace DesafioApiFilme.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GeneroId")
-                        .IsUnique();
+                    b.HasIndex("GeneroId");
 
                     b.ToTable("Filmes");
                 });
@@ -276,8 +274,8 @@ namespace DesafioApiFilme.Migrations
             modelBuilder.Entity("DesafioApiFilme.Models.Filme", b =>
                 {
                     b.HasOne("DesafioApiFilme.Models.Genero", "Genero")
-                        .WithOne("Filmes")
-                        .HasForeignKey("DesafioApiFilme.Models.Filme", "GeneroId")
+                        .WithMany("Filmes")
+                        .HasForeignKey("GeneroId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -347,8 +345,7 @@ namespace DesafioApiFilme.Migrations
 
             modelBuilder.Entity("DesafioApiFilme.Models.Genero", b =>
                 {
-                    b.Navigation("Filmes")
-                        .IsRequired();
+                    b.Navigation("Filmes");
                 });
 
             modelBuilder.Entity("DesafioApiFilme.Models.Sessao", b =>
