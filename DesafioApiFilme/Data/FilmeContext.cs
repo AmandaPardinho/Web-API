@@ -18,13 +18,13 @@ namespace DesafioApiFilme.Data
                 .HasOne(cliente => cliente.Endereco)
                 .WithOne(endereco => endereco.Cliente)
                 .HasPrincipalKey<Cliente>(cliente => cliente.Id)
-                .OnDelete(DeleteBehavior.Restrict);            
+                .OnDelete(DeleteBehavior.Restrict);
 
             //genero
             builder.Entity<Genero>()
-                .HasOne(genero => genero.Filmes)
+                .HasMany(genero => genero.Filmes)
                 .WithOne(filme => filme.Genero)
-                .HasPrincipalKey<Genero>(genero => genero.Id)
+                .HasForeignKey(filme => filme.GeneroId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             //ingresso
