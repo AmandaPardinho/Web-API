@@ -1,10 +1,15 @@
 ﻿using DesafioApiFilme.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace DesafioApiFilme.Data
 {
     public class FilmeContext: DbContext
     {
+        public FilmeContext()
+        {
+            
+        }
         public FilmeContext(DbContextOptions<FilmeContext> opts): base(opts) 
         {
             
@@ -64,7 +69,7 @@ namespace DesafioApiFilme.Data
                 .HasMany(uf => uf.Cidade)
                 .WithOne(cidade => cidade.Uf)
                 .HasPrincipalKey(uf => uf.Id)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Restrict);            
         }
 
         public DbSet<Filme> Filmes { get; set; }
@@ -76,5 +81,6 @@ namespace DesafioApiFilme.Data
         public DbSet<UF> Ufs { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Ingresso> Ingressos { get; set; }
+        public DbSet<Proc> Procs { get; set; }
     }
 }
