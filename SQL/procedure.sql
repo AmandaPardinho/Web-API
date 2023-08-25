@@ -25,7 +25,8 @@ BEGIN
 		UPPER(CnCt.Nome) AS 'CidadeCinema',
 		I.Id AS 'Identificador',
 		(SELECT * FROM dbo.Func_Extrai_Data(Cli.Nome)) AS 'Data',
-		--dbo.Func_Formata_Horario(Clientes.Nome)  AS 'Horário',
+		--dbo.Func_Formata_Horario(Clientes.Nome)
+		dbo.Func_Horario(S.Horario) AS 'Horário',
 		UPPER(F.Titulo) AS 'Filme',
 		UPPER(G.Nome) AS 'Genero',
 		F.Duracao AS 'Duração',			
