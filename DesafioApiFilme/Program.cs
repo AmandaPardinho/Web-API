@@ -1,5 +1,7 @@
 using System.Reflection;
 using DesafioApiFilme.Data;
+using DesafioApiFilme.Models;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -36,3 +38,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+ 
