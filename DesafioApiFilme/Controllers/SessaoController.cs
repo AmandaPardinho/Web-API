@@ -3,6 +3,10 @@ using DesafioApiFilme.Data;
 using DesafioApiFilme.Data.Dtos.DtoSessao;
 using DesafioApiFilme.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DesafioApiFilme.Controllers
 {
@@ -67,3 +71,4 @@ namespace DesafioApiFilme.Controllers
         }
     }
 }
+
