@@ -14,7 +14,7 @@ SELECT
 	UPPER(Est.Nome) AS 'Estado',
 	UPPER(Ct.UfId) AS 'Sigla',
 	UPPER(Cn.Nome) AS 'Cinema',
-	UPPER(Ct.Nome) AS 'CidadeCinema',
+	UPPER(CnCt.Nome) AS 'CidadeCinema',
 	I.Id AS 'Identificador',
 	CONCAT(
 	DATEPART(DAY, S.Horario),
@@ -32,9 +32,11 @@ FROM Clientes AS Cli
 	INNER JOIN Enderecos AS E ON Cli.EnderecoId = E.Id 
 	INNER JOIN Cidades AS Ct ON Ct.Id = E.CidadeId 
 	INNER JOIN Ufs AS Est ON Est.Id = Ct.UfId 
-	FULL OUTER JOIN Cinemas AS Cn ON Cn.EnderecoId = E.ClienteId 		
 	INNER JOIN Ingressos AS I ON I.ClienteId = Cli.Id
 	INNER JOIN Sessoes AS S ON S.Id = I.SessaoId
+	LEFT JOIN Cinemas AS Cn ON Cn.Id = S.CinemaId 
+	LEFT JOIN Enderecos AS CnE ON CnE.Id = Cn.EnderecoId
+	LEFT JOIN Cidades AS CnCt ON CnCt.Id = CnE.CidadeId
 	INNER JOIN Filmes AS F ON F.Id = S.FilmeId 
 	INNER JOIN Generos AS G ON G.Id = F.GeneroId
 ORDER BY S.Horario ASC;
